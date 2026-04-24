@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPU Scheduling Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>CPU Scheduling Simulator</h1>
+
+<div class="container">
+
+    <label>Number of Processes:</label>
+    <input type="number" id="num" min="1">
+    <button onclick="generateInputs()">Generate</button>
+
+    <div id="inputs"></div>
+
+    <label>Select Algorithm:</label>
+    <select id="algo">
+        <option value="fcfs">FCFS</option>
+        <option value="sjf">SJF</option>
+        <option value="rr">Round Robin</option>
+    </select>
+
+    <div id="quantumDiv" style="display:none;">
+        <label>Time Quantum:</label>
+        <input type="number" id="quantum" min="1">
+    </div>
+
+    <button onclick="runSimulation()">Run Simulation</button>
+
+</div>
+
+
+
+<h2>Results</h2>
+<table id="resultTable"></table>
+
+
+<h2>Charts</h2>
+
+<div class="chart-row">
+    <div class="chart-container">
+        <canvas id="wtChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="tatChart"></canvas>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
